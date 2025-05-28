@@ -1,0 +1,500 @@
+/* Basic Reset & Body Styles */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* You can choose a better font later */
+    line-height: 1.6;
+    background-color: #000; /* Default background for consistency */
+    color: #f0f0f0; /* Light text for dark background */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent for the animation to show */
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+nav ul li a {
+    color: #f0f0f0;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1; /* Allows main content to take up available space */
+    padding-top: 60px; /* To account for fixed header */
+    position: relative; /* For z-index context */
+}
+
+/* Hero Section (Home Page Specific) */
+.hero-section {
+    height: calc(100vh - 60px); /* Full viewport height minus header */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensure content is above animation */
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background for readability */
+    padding: 3rem;
+    border-radius: 10px;
+    max-width: 800px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.hero-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+.hero-content h2 {
+    font-size: 1.8rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #fff; /* White button */
+    color: #000;
+    padding: 0.8rem 1.8rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #e0e0e0;
+}
+
+.cta-button.secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+}
+
+.cta-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+/* Background Animation Container */
+#background-animation {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 0; /* Ensures it's behind content */
+    background-color: #000; /* Fallback */
+}
+
+/* Content Pages (About, Skills, Projects, Contact) */
+.content-page {
+    padding: 4rem 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+    background-color: rgba(0, 0, 0, 0.7); /* Slightly transparent background for readability */
+    border-radius: 10px;
+    margin-top: 80px; /* Space from header */
+    margin-bottom: 40px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+}
+
+.content-page h1 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-align: center;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid #333;
+    padding-bottom: 1rem;
+}
+
+.content-page h3 {
+    font-size: 1.8rem;
+    color: #fff;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.content-page p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 1rem;
+}
+
+.content-page a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.content-page a:hover {
+    color: #ccc;
+}
+
+/* About Section Specific */
+.education-timeline {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.timeline-item {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-left: 5px solid #fff;
+    border-radius: 5px;
+}
+
+.timeline-item h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-size: 1.3rem;
+}
+
+.timeline-item p {
+    margin-bottom: 0.5rem;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+/* Skills Section Specific */
+.skills-category {
+    margin-bottom: 2rem;
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    background-color: #fff;
+    color: #000;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    white-space: nowrap; /* Prevent tags from breaking */
+}
+
+/* Projects Section Specific */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.project-card {
+    background-color: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+}
+
+.project-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-card h3 {
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+    color: #fff;
+}
+
+.project-card .project-tech {
+    padding: 0 1rem;
+    color: #aaa;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+}
+
+
+
+
+
+
+
+.project-card p {
+    padding: 0 1rem 1rem;
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.project-links {
+    padding: 0 1rem 1rem;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-button {
+    display: inline-block;
+    background-color: #474646;
+    color: #000;
+    padding: 0.6rem 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.project-button:hover {
+    background-color: #e0e0e0;
+}
+
+.project-button.secondary {
+    background-color: transparent;
+    color: #fff;
+    border: 1px solid #424141;
+}
+
+.project-button.secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #fff;
+}
+
+
+/* Contact Section Specific */
+.contact-details {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.contact-details p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.contact-details a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.contact-details a:hover {
+    text-decoration: underline;
+}
+
+.social-links {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.social-links a {
+    color: #fff;
+    margin: 0 15px;
+    font-size: 2.5rem; /* Adjust icon size */
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #bbb;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group textarea {
+    width: calc(100% - 20px); /* Account for padding */
+    padding: 10px;
+    border: 1px solid #333;
+    border-radius: 5px;
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+    font-size: 1rem;
+    outline: none;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group textarea:focus {
+    border-color: #555;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contact-form button {
+    width: 100%;
+    padding: 1rem;
+    background-color: #fff;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #e0e0e0;
+}
+
+/* ... (existing CSS code) ... */
+
+/* CV Download Section */
+.cv-download-section {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 10px;
+    margin-bottom: 3rem; /* Space before contact form */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.cv-download-section h3 {
+    margin-top: 0;
+    font-size: 1.8rem;
+    color: #fff;
+}
+
+.cv-download-section p {
+    font-size: 1.1rem;
+    color: #ccc;
+    margin-bottom: 1.5rem;
+}
+
+.cv-download-section .cta-button {
+    margin-top: 1rem;
+    padding: 1rem 2.5rem; /* Make it a bit larger */
+    font-size: 1.2rem;
+    color: #1a1a1a;
+}
+
+/* ... (rest of your existing CSS code) ... */
+.form-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #aaa;
+    margin-top: 1rem;
+}
+
+/* Footer */
+footer {
+    background-color: #000;
+    color: #888;
+    text-align: center;
+    padding: 1.5rem 0;
+    font-size: 0.9rem;
+    margin-top: auto; /* Pushes footer to the bottom */
+    border-top: 1px solid #1a1a1a;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .hero-content h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .hero-content p {
+        font-size: 1rem;
+    }
+
+    .cta-button {
+        padding: 0.6rem 1.2rem;
+        margin: 5px;
+    }
+
+    .content-page {
+        padding: 2rem 1rem;
+        margin-top: 70px;
+    }
+
+    .content-page h1 {
+        font-size: 2rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* Stack projects on small screens */
+    }
+
+    .social-links a {
+        font-size: 2rem;
+        margin: 0 10px;
+    }
+}
